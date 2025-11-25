@@ -157,9 +157,13 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   position: relative;
-  color: var(--text-light);
+  background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: 0.1em;
   animation: glitch-animation 3s infinite;
+  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
 }
 
 @keyframes glitch-animation {
@@ -195,13 +199,15 @@ body {
 .glitch::before {
   animation: glitch-before 3s infinite;
   clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-  color: var(--primary-color);
+  color: #00d4ff;
+  opacity: 0.8;
 }
 
 .glitch::after {
   animation: glitch-after 3s infinite;
   clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-  color: var(--secondary-color);
+  color: #00d4ff;
+  opacity: 0.8;
 }
 
 @keyframes glitch-before {
@@ -1210,6 +1216,117 @@ footer p {
 .research-list li:hover {
   padding-left: 2rem;
   color: var(--primary-color);
+}
+
+/* Research Section - New Styles */
+.paper-note {
+  color: var(--primary-color);
+  font-size: 0.95rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.research-section {
+  margin: 3rem 0;
+}
+
+.status-heading {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+}
+
+.research-list-links {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.research-list-links li {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.research-list-links li:hover {
+  background: rgba(0, 212, 255, 0.05);
+  border-color: rgba(0, 212, 255, 0.3);
+  transform: translateX(5px);
+}
+
+.paper-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.2rem 1.5rem;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.paper-link:hover {
+  color: var(--primary-color);
+}
+
+.paper-link::before {
+  content: "🔗";
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.paper-link:hover::before {
+  transform: scale(1.2);
+}
+
+.paper-link-no-url {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.2rem 1.5rem;
+  color: var(--text-light);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.paper-link-no-url::before {
+  content: "📄";
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+  flex-shrink: 0;
+}
+
+.publisher {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  color: var(--dark-bg);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-block;
+  text-align: center;
+  min-width: fit-content;
+}
+
+.publisher.accepted {
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+}
+
+.publisher.submitted {
+  background: linear-gradient(135deg, #00d4ff, #00ffaa);
 }
 
 /* Teaching Section */
